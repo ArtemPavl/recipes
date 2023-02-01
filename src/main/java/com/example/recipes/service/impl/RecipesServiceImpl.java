@@ -17,8 +17,9 @@ public class RecipesServiceImpl implements RecipesService {
     IngredientServiceImpl ingredientService;
 
     @Override
-    public void addRecipe(Recipe recipe) {
+    public long addRecipe(Recipe recipe) {
         recipesList.put(id++, recipe);
+        return id;
     }
 
     @Override

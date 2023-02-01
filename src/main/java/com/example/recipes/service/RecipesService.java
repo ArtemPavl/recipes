@@ -5,7 +5,7 @@ import com.example.recipes.model.Recipe;
 
 public interface RecipesService {
 
-    void addRecipe(Recipe recipe);
+    long addRecipe(Recipe recipe);
 
     Recipe getRecipe(long id);
 
