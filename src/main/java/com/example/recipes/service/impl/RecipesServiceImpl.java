@@ -4,6 +4,7 @@ import com.example.recipes.model.Ingredient;
 import com.example.recipes.model.Recipe;
 import com.example.recipes.service.RecipesService;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -52,6 +53,31 @@ public class RecipesServiceImpl implements RecipesService {
             }
         }
     }
+
+    @Override
+    public boolean editRecipe(long id, Recipe recipe){
+        if(recipesList.containsKey(id)){
+            recipesList.put(id, recipe);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteRecipe(long id){
+        if(recipesList.containsKey(id)){
+            recipesList.remove(id);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void deleteAllRecipes(){
+        recipesList = new HashMap<>();
+    }
+
+
     @Override
     public void addIngredient(Ingredient ingredient){
         ingredientService.addIngredient(ingredient, idIngredient++);

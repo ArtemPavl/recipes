@@ -15,5 +15,11 @@ public interface RecipesService {
 
     void addStep(long id, String step);
 
+    boolean editRecipe(long id, Recipe recipe);
+
+    boolean deleteRecipe(long id);
+
+    void deleteAllRecipes();
+
     void addIngredient(Ingredient ingredient);
 }
